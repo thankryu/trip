@@ -1,0 +1,23 @@
+# Database
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: test
+    username: test
+    password: test
+  # Jpa 설정
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+        default_batch_fetch_size: 100
+    # open-in-view: false
+    # open in view 설정 확인하기
+
+logging:
+  level:
+    org.hibernate.sql: debug
+    org.hibernate.type: trace
