@@ -1,6 +1,5 @@
 package com.thankryu.trip.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 
 import javax.persistence.*;
@@ -9,6 +8,7 @@ import java.util.List;
 
 @Entity
 @Getter
+@Table(name="ORDER_TB")
 public class OrderEntity {
 
     @Id

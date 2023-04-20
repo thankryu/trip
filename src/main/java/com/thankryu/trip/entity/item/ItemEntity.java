@@ -2,16 +2,14 @@ package com.thankryu.trip.entity.item;
 
 import lombok.Getter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * 상품 entity
  */
 @Entity
 @Getter
+@Table(name="ITEM_TB")
 public abstract class ItemEntity {
 
     @Id

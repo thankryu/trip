@@ -3,6 +3,7 @@ package com.thankryu.trip.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.thankryu.trip.enums.JoinStatus;
 import com.thankryu.trip.enums.JoinType;
+import lombok.Builder;
 import lombok.Getter;
 
 import javax.persistence.*;
@@ -15,6 +16,7 @@ import java.util.List;
  */
 @Entity
 @Getter
+@Table(name="MEMBER_TB")
 public class MemberEntity {
 
     @Id
@@ -39,4 +41,16 @@ public class MemberEntity {
     @JsonIgnore
     @OneToMany
     private List<OrderEntity> orders = new ArrayList<>(); // 주문
+
+    @Builder
+    public MemberEntity(String name, String email, JoinType type, String phone_number) {
+        this.name = name;
+        this.email = email;
+        this.type = type;
+        this.phone_number = phone_number;
+    }
+
+    public MemberEntity() {
+
+    }
 }
