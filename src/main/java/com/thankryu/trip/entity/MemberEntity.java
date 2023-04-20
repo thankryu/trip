@@ -27,9 +27,9 @@ public class MemberEntity {
     private String email; // 회원 이메일
 
     @Enumerated(EnumType.STRING)
-    private JoinType phone_number; // 회원 전화번호
+    private JoinType type; // 회원 가입 타입
 
-    private String Type; // 회원 가입 타입
+    private String phone_number; // 전화번호
 
     private LocalDate joinDate; // 가입일
 
