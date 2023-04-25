@@ -5,5 +5,5 @@ import com.thankryu.trip.dto.CreateMemberRequest;
 
 public interface MemberService {
 
-    void join(CreateMemberRequest memberRequest);
+    Long join(CreateMemberRequest memberRequest);
 }

@@ -1,7 +1,6 @@
 package com.thankryu.trip.api;
 
 import com.thankryu.trip.dto.CreateMemberRequest;
-import com.thankryu.trip.entity.MemberEntity;
 import com.thankryu.trip.service.MemberService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/member")
 @Slf4j
 @RequiredArgsConstructor
-public class MemberController {
+public class MemberApiController {
 
     private final MemberService memberService;
 
@@ -29,10 +28,10 @@ public class MemberController {
     public Result joinMember(@RequestBody CreateMemberRequest memberRequest){
 
         // 로직 진행
-        memberService.join(memberRequest);
+        Long id = memberService.join(memberRequest);
 
         // 결과 반환
-        return new Result("success");
+        return new Result(id);
     }
 
     @Data
